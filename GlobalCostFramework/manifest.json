@@ -1,0 +1,13 @@
+{
+    "Name": "Global Cost Framework",
+    "Author": "Nullnnow",
+    "Version": "1.0.0",
+    "Description": "A framework mod to make adjusting prices easier.",
+    "UniqueID": "Nullnnow.GCF",
+    "EntryDll": "GlobalCostFramework.dll",
+    "UpdateKeys": [
+        "Nexus:TODO"
+    ],
+    "Dependencies": [
+    ],
+}
