@@ -1,5 +1,4 @@
-﻿using GlobalCostFramework;
-using HarmonyLib;
+﻿using HarmonyLib;
 using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
@@ -8,7 +7,7 @@ using xTile.Dimensions;
 using xTile.Tiles;
 using SObject = StardewValley.Object;
 
-namespace MaruExpansion
+namespace GlobalCostFramework
 {
     public sealed class ModEntry : Mod
     {
@@ -36,6 +35,7 @@ namespace MaruExpansion
         {
             if (e.NameWithoutLocale.IsEquivalentTo("Nullnnow.GCF/AdjustmentData"))
             {
+                StaticMonitor.Log("----------------", LogLevel.Debug);
                 e.LoadFrom(() => new Dictionary<string, AdjustmentData>(), AssetLoadPriority.Exclusive);
             }
         }
@@ -43,6 +43,7 @@ namespace MaruExpansion
         private static void Object_getPriceAfterMultipliers_postfix(SObject __instance, float startPrice, ref float __result, long specificPlayerID = -1L)
         {
             float multiplier = 1f;
+            StaticMonitor.Log("Calling get price", LogLevel.Debug);
             //foreach (Farmer player in Game1.getAllFarmers())
             //{
             //    if (Game1.player.useSeparateWallets)
@@ -66,9 +67,10 @@ namespace MaruExpansion
             //}
 
             var data = Game1.content.Load<Dictionary<string, AdjustmentData>>("Nullnnow.GCF/AdjustmentData");
+            StaticMonitor.Log($"{data.Count}", LogLevel.Debug);
             foreach (var entry in data)
             {
-                StaticMonitor.Log($"Key: {entry.Key} -> {entry.Value}");
+                StaticMonitor.Log($"Key: {entry.Key} -> {entry.Value}", LogLevel.Debug);
             }
 
         }
