@@ -28,3 +28,18 @@ Whether a specific NPC has a specific gift taste for a provided item.
 | NPC   | string | The name of an NPC (e.g., Pierre). | Yes
 | Item  | string | Either the qualified or unqualified ID of an object. Can also be ``Input`` for use in Price Adjustments. | Yes
 | Taste | string | What taste(s) will return a true value. Can be ``Love``, ``Like``, ``Neutral``, ``Dislike``, and/or ``Hate``. | No (Defaults to ``Love``).
+
+## Examples
+The mod page has an example mod that does the following:
+- Increases the price of monster loot by 10 per combat level.
+- Has cooked food benefit from the Artisan profession.
+- Increases the price of large eggs and milk by 50% when the player has the Rancher profession. Once they reach level 10 farming, this boost increases to 100%.
+- Increase the price multiplier of iridium quality objects by 5%.
+- Increase the price of slime and petrified slime by 10% after killing 100 Green Slimes.
+- Have mayo, cheese, cloth, and truffle oil benefit from the Rancher profession.
+- Change how much Pierre is willing to buy an item based off his gift tastes for said item;
+  - Love: +10%
+  - Like: +5%
+  - Neutral: +0%
+  - Dislike: -5%
+  - Hate: -10%
